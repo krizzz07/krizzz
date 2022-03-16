@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <div class="container" align="center">
+  <h1>Login Form</h1>
+  <!--<form action="action_page.php">-->
+        <label for="name">Username</label><br>
+        <input type="text" id="uname" name="name"><br>
+        <label for="pass">Password</label><br>
+        <input type="password" id="pass" name="pass"><br>
+        <button type="submit" onclick="validate()" class="btn" id="butn">Login</button>
+  </div>
+  <script>
+    function validate() {
+    var uname=document.getElementById("uname").value;
+    var pass=document.getElementById("pass").value;
+      if(uname == "krizzz" && pass == "koiloth") {
+        alert ("Login success");
+        location.href='true.html';
+      } else {
+        alert("Login failed, Invalid credentials");
+        location.href="false.html"
+      }
+    }
+
+  </script>
+</body>
+</html>
