@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Form</title>
-</head>
-<style>
-body {
-  background-image: url('bgimage.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-</style>
-  <div class="container" align="center">
-  <h1>Login Form</h1>
-  <!--<form action="action_page.php">-->
-  <label for="name">Username</label><br>
-  <input type="text" id="uname" name="name"><br>
-  <label for="pass">Password</label><br>
-  <input type="password" id="pass" name="pass"><br>
-  <button type="submit" onclick="validate()" class="btn" id="butn">Login</button>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-  <script>
-    function validate() {
-      var uname=document.getElementById("uname").value;
-      var pass=document.getElementById("pass").value;
-      var hash = CryptoJS.MD5(pass).toString();
-      if(uname == "krizzz" && hash == "1a110b3304029ca76dd2c7626c764ba0") {
-        alert ("Login success");
-        location.href='true.html';
-      } else {
-        alert("Login failed, Invalid credentials");
-        location.href="false.html"
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Login Form</h3>
+      <!--<form action="action_page.php">-->
+      <div class="usn">
+        <label for="name" >Username</label>
+        <input type="text" class="field" id="uname" name="name">
+      </div>
+      <div class="pwd">
+        <label for="pass" class="pwd">Password</label>
+        <input type="password" class="field" id="pass" name="pass">
+      </div>
+      <button type="submit" onclick="validate()" class="btn" id="butn">Login</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script>
+      function validate() {
+        var uname=document.getElementById("uname").value;
+        var pass=document.getElementById("pass").value;
+        var hash = CryptoJS.MD5(pass).toString();
+        if(uname == "krizzz" && hash == "1a110b3304029ca76dd2c7626c764ba0") {
+          alert ("Login success");
+          location.href='true.html';
+        } else {
+          alert("Login failed, Invalid credentials");
+          location.href="false.html"
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>
